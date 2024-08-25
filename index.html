@@ -3,10 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levantamento de estoque</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Levantamento de Estoque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CASA DI CONTI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Levantamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="acompanhamento.html">Acompanhamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tabela de Levantamento de Estoque -->
+    <div class="container mt-5">
+        <h2>Levantamento de Estoque</h2>
+        <div class="mb-3">
+            <button class="btn btn-primary" onclick="filtrarLinhas()">Filtrar Linhas Preenchidas</button>
+            <button class="btn btn-secondary" onclick="mostrarTodasLinhas()">Mostrar Todas as Linhas</button>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Estoque Atual</th>
+                    <th>Sugestão de Pedido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produto 1</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Produto 2</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Produto 3</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <!-- Adicione mais produtos conforme necessário -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Função para filtrar as linhas preenchidas
+        function filtrarLinhas() {
+            const rows = document.querySelectorAll("tbody tr");
+            rows.forEach(row => {
+                const estoque = row.cells[1].innerText.trim();
+                const pedido = row.cells[2].innerText.trim();
+                if (estoque === "" && pedido === "") {
+                    row.classList.add("hidden");
+                }
+            });
+        }
+
+        // Função para mostrar todas as linhas
+        function mostrarTodasLinhas() {
+            const rows = document.querySelectorAll("tbody tr");
+            rows.forEach(row => {
+                row.classList.remove("hidden");
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
