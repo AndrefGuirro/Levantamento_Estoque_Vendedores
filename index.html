@@ -13,9 +13,12 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #156ff5a0;">
+    
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">CASA DI CONTI</a>
+            <a class="navbar-brand" href="#">
+                <img src="Imagens/logoConti.jpg" alt="CASA DI CONTI" style="width:200px;" class="rounded-pill"> 
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,7 +31,7 @@
                         <a class="nav-link" href="acompanhamento.html">Acompanhamento</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="https://pbi.doanalytics.com.br/">Sistema BI Conti</a>
                     </li>
                 </ul>
             </div>
@@ -39,30 +42,51 @@
     <div class="container mt-5">
         <h2>Levantamento de Estoque</h2>
         <div class="mb-3">
-            <button class="btn btn-primary" onclick="filtrarLinhas()">Apenas cadastrados</button>
+            <button class="btn btn-secondary" onclick="filtrarLinhas()">Apenas cadastrados</button>
             <button class="btn btn-secondary" onclick="mostrarTodasLinhas()">Todos produtos</button>
         </div>
+        
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Nome do Produto</th>
-                    <th>Estoque Atual</th>
-                    <th>Sugestão de Pedido</th>
+                    <th>NOME PRODUTO</th>
+                    <th>ESTOQUE</th>
+                    <th>SUGESTÃO</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Produto 1</td>
+                    <td>Smith 44 Puro Malte 350 ml LT</td>
                     <td contenteditable="true"></td>
                     <td contenteditable="true"></td>
                 </tr>
                 <tr>
-                    <td>Produto 2</td>
+                    <td>1500 Puro Malte 350 ml Lata</td>
                     <td contenteditable="true"></td>
                     <td contenteditable="true"></td>
                 </tr>
                 <tr>
-                    <td>Produto 3</td>
+                    <td>Moinho Real Puro Malte 350 ml</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Burguesa 350 ml Lata</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Conti Bier 350 ml Lata</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Zero Grau 350 ml Lata</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Samba 350 ml Lata</td>
                     <td contenteditable="true"></td>
                     <td contenteditable="true"></td>
                 </tr>
@@ -71,28 +95,7 @@
         </table>
     </div>
 
-    <script>
-        // Função para filtrar as linhas preenchidas
-        function filtrarLinhas() {
-            const rows = document.querySelectorAll("tbody tr");
-            rows.forEach(row => {
-                const estoque = row.cells[1].innerText.trim();
-                const pedido = row.cells[2].innerText.trim();
-                if (estoque === "" && pedido === "") {
-                    row.classList.add("hidden");
-                }
-            });
-        }
-
-        // Função para mostrar todas as linhas
-        function mostrarTodasLinhas() {
-            const rows = document.querySelectorAll("tbody tr");
-            rows.forEach(row => {
-                row.classList.remove("hidden");
-            });
-        }
-    </script>
-
+    <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
