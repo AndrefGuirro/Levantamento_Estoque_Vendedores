@@ -35,17 +35,17 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Nome do Produto</th>
-                    <th>Meta Mensal (HL)</th>
-                    <th>Meta em Pacotes</th>
-                    <th>Vendas Diárias (Pacotes)</th>
-                    <th>Pacotes Faltantes</th>
+                    <th>PRODUTO</th>
+                    <th>META (HL)</th>
+                    <th>META (CX)</th>
+                    <th>VENDA DIA (CX)</th>
+                    <th>FALTA P/ DIA</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Produto 1</td>
-                    <td contenteditable="true">100</td>
+                    <td>Cerveja TT</td>
+                    <td contenteditable="true">266.34</td>
                     <td id="metaPacotes1">Calculado</td>
                     <td contenteditable="true">0</td>
                     <td id="faltante1">Calculado</td>
@@ -56,20 +56,31 @@
     </div>
 
     <script>
-        // Função para calcular a conversão de HL para pacotes e os pacotes faltantes
+        // Função para calcular a conversão de HL para pacotes e o valor faltante
         function calcularMetaPacotes() {
-            let metaHL = document.querySelector("td[contenteditable='true']").innerText;
-            let metaPacotes = metaHL * 10; // Exemplo: 1 HL = 10 pacotes (ajuste conforme necessário)
+            // Obter o valor da meta em HL e converter para float
+            let metaHL = parseFloat(document.querySelector("tr td[contenteditable='true']").innerText);
+            
+            // Calcular a meta em pacotes (CX) e arredondar para cima
+            let metaPacotes = Math.ceil(metaHL / 0.063); // Ajuste conforme necessário
+            
+            // Atualizar o valor da meta em pacotes (CX)
             document.getElementById("metaPacotes1").innerText = metaPacotes;
-
-            // Calcular pacotes faltantes
-            let vendasDiarias = document.querySelector("tr td[contenteditable='true']:nth-of-type(2)").innerText;
-            let diasRestantes = 20; // Exemplo: 20 dias úteis restantes
-            let faltante = metaPacotes - vendasDiarias;
-            document.getElementById("faltante1").innerText = faltante / diasRestantes;
+            
+            // Obter o valor da venda diária em pacotes (CX) e converter para float
+            let vendasDiarias = parseFloat(document.querySelectorAll("tr td[contenteditable='true']")[1].innerText);
+            
+            // Calcular o número de dias úteis restantes
+            let diasRestantes = 20; // Ajuste conforme necessário
+            
+            // Calcular o valor faltante por dia e arredondar para cima
+            let faltante = Math.ceil((metaPacotes - vendasDiarias) / diasRestantes);
+            
+            // Atualizar o valor faltante por dia
+            document.getElementById("faltante1").innerText = faltante;
         }
 
-        // Chamar a função ao carregar a página ou ao editar os campos
+        // Chamar a função ao carregar a página e ao editar os campos
         document.querySelectorAll("td[contenteditable='true']").forEach(td => {
             td.addEventListener("input", calcularMetaPacotes);
         });
@@ -80,3 +91,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
