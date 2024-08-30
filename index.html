@@ -14,7 +14,6 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #156ff5a0;">
-    
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="Imagens/logoConti.jpg" alt="CASA DI CONTI" style="width:200px;" class="rounded-pill"> 
@@ -41,9 +40,23 @@
     <!-- Tabela de Levantamento de Estoque -->
     <div class="container mt-5">
         <h2>Levantamento de Estoque</h2>
-        <div class="mb-3">
-            <button class="btn btn-secondary" onclick="filtrarLinhas()">Apenas cadastrados</button>
-            <button class="btn btn-secondary" onclick="mostrarTodasLinhas()">Todos produtos</button>
+        <div class="d-flex mb-3">
+            <button class="btn btn-secondary me-2" onclick="filtrarLinhas()">Apenas Cadastrados</button>
+            <button class="btn btn-secondary me-2" onclick="mostrarTodasLinhas()">Todos Produtos</button>
+            <!-- Menu de Grupos -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Grupo
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('350ml')">350 ml</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('300ml')">300 ml</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('473ml')">473 ml</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p3')">p3</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p2')">p2</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p600')">p600</a></li>
+                </ul>
+            </div>
         </div>
         
         <table class="table table-bordered">
