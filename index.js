@@ -1,36 +1,47 @@
-// Função para filtrar os produtos por grupo
+// Função para filtrar produtos pelo grupo selecionado
 function filtrarPorGrupo(grupo) {
-    const rows = document.querySelectorAll("tbody tr");
-    rows.forEach(row => {
-        if (row.getAttribute("data-grupo") === grupo) {
-            row.classList.remove("hidden");
+    // Seleciona todas as linhas da tabela
+    let linhas = document.querySelectorAll("tbody tr");
+
+    // Percorre todas as linhas e exibe apenas as que pertencem ao grupo selecionado
+    linhas.forEach(function (linha) {
+        let grupoProduto = linha.getAttribute("data-grupo"); // Pega o grupo do produto
+
+        // Verifica se a linha pertence ao grupo selecionado e exibe/oculta de acordo
+        if (grupoProduto === grupo || grupo === 'todos') {
+            linha.style.display = ""; // Mostra a linha
         } else {
-            row.classList.add("hidden");
+            linha.style.display = "none"; // Oculta a linha
         }
     });
+
+
     // Atualiza o nome do botão com o grupo selecionado
     document.getElementById('dropdownMenuButton').textContent = grupo;
 }
 
-// Função para mostrar todos os produtos
-function mostrarTodasLinhas() {
-    const rows = document.querySelectorAll("tbody tr");
-    rows.forEach(row => {
-        row.classList.remove("hidden");
-    });
-    document.getElementById('dropdownMenuButton').textContent = "Grupo";
-}
-
-// Função para filtrar apenas as linhas onde há produtos cadastrados
 function filtrarLinhas() {
-    const rows = document.querySelectorAll("tbody tr");
-    rows.forEach(row => {
-        const estoque = row.cells[1].textContent.trim();
-        const sugestao = row.cells[2].textContent.trim();
-        if (estoque || sugestao) {
-            row.classList.remove("hidden");
+    var linhas = document.querySelectorAll("tbody tr");
+    linhas.forEach(function(linha) {
+        var campos = linha.querySelectorAll("td[contenteditable='true']");
+        var preenchido = false;
+        campos.forEach(function(campo) {
+            if (campo.innerText.trim() !== "") {
+                preenchido = true;
+            }
+        });
+        if (preenchido) {
+            linha.style.display = "";
         } else {
-            row.classList.add("hidden");
+            linha.style.display = "none";
         }
     });
 }
+
+function mostrarTodasLinhas() {
+    var linhas = document.querySelectorAll("tbody tr");
+    linhas.forEach(function(linha) {
+        linha.style.display = "";
+    });
+}
+
