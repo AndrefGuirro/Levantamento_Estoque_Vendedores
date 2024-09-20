@@ -61,17 +61,17 @@ function mostrarTodasLinhas() {
     });
 }
 
-// Função para filtrar produtos enquanto digita na pesquisa busca
-document.getElementById('searchInput').addEventListener('input', function() {
-    let searchTerm = this.value.toLowerCase(); // Termo de pesquisa digitado pelo usuário
-    let linhas = document.querySelectorAll('tbody tr'); // Todas as linhas da tabela
 
-    linhas.forEach(function(linha) {
-        let nomeProduto = linha.querySelector('td').innerText.toLowerCase(); // Nome do produto
-        if (nomeProduto.includes(searchTerm)) {
-            linha.style.display = ''; // Mostra a linha se o nome corresponder
+document.getElementById('searchInput').addEventListener('input', function() {
+    let filterValue = this.value.toLowerCase();
+    let rows = document.querySelectorAll("tbody tr");
+    
+    rows.forEach(function(row) {
+        let productName = row.querySelector("td").innerText.toLowerCase();
+        if (productName.includes(filterValue)) {
+            row.style.display = ""; // Mostra a linha se a busca corresponder
         } else {
-            linha.style.display = 'none'; // Oculta a linha se não corresponder
+            row.style.display = "none"; // Oculta a linha se não corresponder
         }
     });
 });
