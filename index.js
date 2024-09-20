@@ -15,6 +15,22 @@ function filtrarPorGrupo(grupo) {
         }
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+    
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                filtrarPorGrupo(this.getAttribute('data-grupo'));
+            });
+            
+            // Para dispositivos móveis
+            item.addEventListener('touchstart', function(e) {
+                filtrarPorGrupo(this.getAttribute('data-grupo'));
+            });
+        });
+    });
+    
+
 
     // Atualiza o nome do botão com o grupo selecionado
     document.getElementById('dropdownMenuButton').textContent = grupo;
