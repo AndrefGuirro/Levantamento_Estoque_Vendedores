@@ -95,40 +95,36 @@
                 <button class="btn btn-secondary me-2" onclick="filtrarLinhas()">Apenas Cadastrados</button>
                 <button class="btn btn-secondary me-2" onclick="mostrarTodasLinhas()">Todos Produtos</button>
                 <!-- Menu de Grupos -->
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        Grupo
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('todos')">Todos Produtos</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('350ml')">350 ml</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('300ml')">300 ml</a></li>                        
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p3')">p3</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p2')">p2</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p600')">p600/450</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('refrilata')">Refri Lata</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('refrvdr')">Refri vidro</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('big')">Big Power</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('473ml')">473 ml</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('269ml')">269 ml</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('600ml')">600 ml cerv.</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('litrao')">Litrão</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('330ml')">Long neck</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('ice')">Ice</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('barkov')">Barkov</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('contini')">Contini</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('vibe')">Vibe</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('sakai')">Sakai</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('old_red')">Old Red</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('900ml')">900 ml</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('1_litro')">1 Litro</a></li>
-
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('vibe')">Vibe</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('vibe')">Vibe</a></li>
-                        
-                    </ul>
-                </div>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">                    
+      Grupo
+    </button>
+    <ul class="dropdown-menu overflow-auto" style="max-height: 100vh; columns: 2; padding: 1rem;" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('todos')">Todos Produtos</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('350ml')">350 ml</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('300ml')">300 ml</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p3')">p3</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p2')">p2</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('p600')">p600/450</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('refrilata')">Refri Lata</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('refrvdr')">Refri vidro</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('big')">Big Power</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('473ml')">473 ml</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('269ml')">269 ml</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('600ml')">600 ml cerv.</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('litrao')">Litrão</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('330ml')">Long neck</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('ice')">Ice</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('barkov')">Barkov</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('contini')">Contini</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('vibe')">Vibe</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('sakai')">Sakai</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('old_red')">Old Red</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('900ml')">900 ml</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filtrarPorGrupo('1_litro')">1 Litro</a></li>
+    </ul>
+  </div>
+  
             </div>
         </div>
 
