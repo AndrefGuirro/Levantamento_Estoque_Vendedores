@@ -53,7 +53,7 @@
 
 /*Botão compartilhar*/
 #shareButton {
-    position: fixed;
+    position: sticky;
     top: 270px; /* Altura da navbar */
     z-index: 1020;
     background: none; /* Remove fundo */
