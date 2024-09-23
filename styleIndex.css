@@ -1,0 +1,64 @@
+/* Fixando a navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    width: 100%;
+}
+
+/* Fixando o cabeçalho "Levantamento de Estoque" e botões */
+.sticky-header {
+    position: sticky;
+    top: 70px; /* Altura da navbar */
+    z-index: 1020;
+    background-color: white;
+    padding: 10px 0;
+}
+
+.sharebButton {
+    position: sticky;
+    top: 56px; /* Altura da navbar */
+    z-index: 1020;
+    padding: 10px 0;
+}
+
+/* Fixando o cabeçalho da tabela */
+.thead th {
+    position: sticky;
+    top: 110px; /* Altura da navbar + altura do cabeçalho e botões */
+    z-index: 1020;
+    background-color: white;
+    z-index: 1010;
+}
+
+
+/* Cor de fundo mais escura e contorno mais forte no cabeçalho */
+.custom-table-header th {
+    background-color: #d3d3d3; /* Cinza escuro */
+    border: 2px solid #888;    /* Contorno mais forte */
+    color: #000;               /* Cor do texto */
+}
+
+/* Cor de fundo mais escura e contorno mais forte no cabeçalho */
+.custom-table-header th {
+    background-color: #d3d3d3; /* Cinza escuro */
+    border: 2px solid #000;    /* Contorno preto forte */
+    color: #000;               /* Cor do texto */
+}
+
+/* Bordas pretas */
+.table-bordered td, .table-bordered th {
+    border: 1px solid #000;    /* Bordas pretas */
+}
+
+/*Botão compartilhar*/
+#shareButton {
+    position: fixed;
+    top: 270px; /* Altura da navbar */
+    z-index: 1020;
+    background: none; /* Remove fundo */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    padding: 0; /* Remove espaçamento interno */
+}
+
