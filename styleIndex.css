@@ -51,14 +51,18 @@
     border: 1px solid #000;    /* Bordas pretas */
 }
 
-/*Botão compartilhar*/
+/* Botão compartilhar */
 #shareButton {
     position: sticky;
     top: 270px; /* Altura da navbar */
-    z-index: 1020;
-    background: none; /* Remove fundo */
-    border: none; /* Remove borda */
-    cursor: pointer; /* Altera o cursor para indicar que é clicável */
-    padding: 0; /* Remove espaçamento interno */
+    width: 60px; /* Largura do botão para formar um círculo */
+    height: 55px; /* Altura do botão para formar um círculo */
+    border-radius: 50%; /* Faz o botão ficar redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px; /* Define o tamanho da fonte */
 }
+
 
