@@ -54,10 +54,9 @@
 /* Botão compartilhar */
 #shareButton {
     position: sticky;
-    top: 270px; /* Altura da navbar */
-    width: 60px; /* Largura do botão para formar um círculo */
-    height: 55px; /* Altura do botão para formar um círculo */
-    border-radius: 50%; /* Faz o botão ficar redondo */
+    top: 150px; /* Altura da navbar */
+    width: 100px; /* Largura do botão para formar um círculo */
+
     display: flex;
     align-items: center;
     justify-content: center;
