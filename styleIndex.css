@@ -55,8 +55,8 @@
 #shareButton {
     position: sticky;
     top: 150px; /* Altura da navbar */
-    width: 60px; /* Largura do botão quadrado */
-    height: 40px;
+    width: 20px; /* Largura do botão quadrado */
+    height: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
