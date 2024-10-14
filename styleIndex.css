@@ -55,13 +55,20 @@
 #shareButton {
     position: sticky;
     top: 150px; /* Altura da navbar */
-    width: 100px; /* Largura do botão para formar um círculo */
-
+    width: 60px; /* Largura do botão quadrado */
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 10px; /* Define o tamanho da fonte */
+    padding: 0; /* Remover padding interno do botão */
+}
+
+/* Imagem dentro do botão */
+#shareImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz com que a imagem se ajuste ao tamanho do botão sem distorção */
 }
 
 
