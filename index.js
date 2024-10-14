@@ -95,8 +95,8 @@ document.getElementById('shareButton').addEventListener('click', function() {
     });
 
     // Verifica se há produtos preenchidos
-    if (message === 'Levantamento de Estoque\n------------------------\n\n') {
-        alert('Nenhum produto preenchido para compartilhar.');
+    if (message === 'Segue Levantamento de Estoque e Sugestão de pedido\n------------------------\n\n') {
+        alert('Nenhum produto preenchido para compartilhar. Preencha os 2 campos, Estoque e sugestão, mesmo que seja 0');
         return;
     }
 
