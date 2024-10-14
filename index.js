@@ -76,11 +76,11 @@ document.getElementById('searchInput').addEventListener('input', function() {
     });
 });
 
-//Função compartilhar whats app
+//Função compartilhar WhatsApp
 document.getElementById('shareButton').addEventListener('click', function() {
     const rows = document.querySelectorAll('table tbody tr');
-    let message = 'Segue levantamento de estoque e sugestão de pedido:\n\n\n';
-        
+    let message = '**Segue levantamento de estoque e sugestão de pedido:**\n\n'; // Formata título em negrito
+    
     rows.forEach(row => {
         const columns = row.querySelectorAll('td');
         const nomeProduto = columns[0].innerText;
@@ -89,13 +89,13 @@ document.getElementById('shareButton').addEventListener('click', function() {
         
         // Verifica se as colunas "ESTOQUE" e "SUGESTÃO" estão preenchidas
         if (estoque !== '' && sugestao !== '') {
-            // Formata a mensagem
-            message += `${nomeProduto}\n Estoque:   ${estoque}\n Sugestão: ${sugestao}\n\n`;
+            // Formata a mensagem com partes em negrito
+            message += `**${nomeProduto}**\n**Estoque:**   ${estoque}\n**Sugestão:** ${sugestao}\n\n`;
         }
     });
 
     // Verifica se há produtos preenchidos
-    if (message === 'Segue levantamento de estoque e sugestão de pedidos:\n\nPRODUTO -\tESTOQUE -\tSUGESTÃO\n') {
+    if (message === '**Segue levantamento de estoque e sugestão de pedidos:**\n\n') {
         alert('Nenhum produto preenchido para compartilhar.');
         return;
     }
@@ -109,3 +109,4 @@ document.getElementById('shareButton').addEventListener('click', function() {
     // Abre a URL do WhatsApp
     window.open(whatsappUrl, '_blank');
 });
+
