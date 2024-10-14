@@ -81,6 +81,7 @@ document.getElementById('shareButton').addEventListener('click', function() {
     const rows = document.querySelectorAll('table tbody tr');
     let message = '**Segue levantamento de estoque e sugestão de pedido:**\n\n'; // Formata título em negrito
     
+    let message = 'Levantamento de Estoque\n------------------------\n\n';
     rows.forEach(row => {
         const columns = row.querySelectorAll('td');
         const nomeProduto = columns[0].innerText;
