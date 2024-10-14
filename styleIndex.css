@@ -56,7 +56,7 @@
     position: sticky;
     top: 150px; /* Altura da navbar */
     width: 80px; /* Largura do botão para formar um quadrado */
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +75,7 @@
 @media (max-width: 768px) {  /* Exemplo: telas com largura até 768px */
     #shareButton {
         width: 50px;  /* Dimensões menores para celular */
-        height: 50px;
+        height: 40px;
     }
 }
 
