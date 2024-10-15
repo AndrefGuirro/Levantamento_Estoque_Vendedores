@@ -79,7 +79,7 @@ document.getElementById('searchInput').addEventListener('input', function() {
 //Função compartilhar WhatsApp
 document.getElementById('shareButton').addEventListener('click', function() {
     const rows = document.querySelectorAll('table tbody tr');
-    let message = 'Levantamento de Estoque\n------------------------\n\n'; // Título com linha pontilhada
+    let message = 'Segue Levantamento de Estoque e Sugestão de pedido\n------------------------\n\n'; // Título com linha pontilhada
     
     rows.forEach(row => {
         const columns = row.querySelectorAll('td');
