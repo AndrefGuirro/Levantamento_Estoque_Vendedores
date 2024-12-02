@@ -88,7 +88,7 @@ document.getElementById('shareButton').addEventListener('click', function() {
         const sugestao = columns[2].innerText.trim();
         
         // Verifica se as colunas "ESTOQUE" e "SUGESTÃO" estão preenchidas
-        if (estoque !== '' && sugestao !== '') {
+        if (estoque !== '' & sugestao !== '') {
             // Formata a mensagem sem símbolos de formatação
             message += `Produto: ${nomeProduto}\nEstoque: ${estoque}\nSugestão: ${sugestao}\n\n------------------------\n`;
         }
