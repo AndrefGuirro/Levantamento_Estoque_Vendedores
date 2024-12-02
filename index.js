@@ -79,7 +79,7 @@ document.getElementById('searchInput').addEventListener('input', function() {
 //Função compartilhar WhatsApp
 document.getElementById('shareButton').addEventListener('click', function() {
     const rows = document.querySelectorAll('table tbody tr');
-    let message = 'Segue Levantamento de Estoque e Sugestão de pedido\n------------------------\n\n'; // Título com linha pontilhada
+    let message = 'Segue Levantamento de Estoque e Sugestão de pedido:\n------------------------\n\n'; // Título com linha pontilhada
     
     rows.forEach(row => {
         const columns = row.querySelectorAll('td');
@@ -95,8 +95,8 @@ document.getElementById('shareButton').addEventListener('click', function() {
     });
 
     // Verifica se há produtos preenchidos
-    if (message === 'Segue Levantamento de Estoque e Sugestão de pedido\n------------------------\n\n') {
-        alert('Nenhum produto preenchido para compartilhar. Preencha os 2 campos, Estoque e sugestão, mesmo que seja 0');
+    if (message === 'Segue Levantamento de Estoque e Sugestão de pedido:\n------------------------\n\n') {
+        alert('Falta produto preenchido para compartilhar. Preencha as 2 colunas, Estoque e sugestão, mesmo que seja 0');
         return;
     }
 
