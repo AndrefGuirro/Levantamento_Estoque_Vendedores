@@ -1,6 +1,6 @@
 {
     "name": "Levantamento de Estoque",
-    "short_name": "Estoque","start_url": "/index.html",
+    "short_name": "Levantamento Estoque","start_url": "https://andrefguirro.github.io/Levantamento_Estoque_Vendedores/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
