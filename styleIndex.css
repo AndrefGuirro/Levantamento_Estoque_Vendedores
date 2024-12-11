@@ -6,6 +6,17 @@
     width: 100%;
 }
 
+.navbar-nav .nav-link {
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa a letra mais grossa */
+    color: #ffffff; /* Deixa o texto branco para contraste */
+    text-transform: uppercase; /* Deixa as letras todas maiúsculas (opcional) */
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #ffcc00; /* Altera a cor ao passar o mouse (opcional) */
+  }
+
 /* Fixando o cabeçalho "Levantamento de Estoque" e botões */
 .sticky-header {
     position: sticky;
