@@ -1,6 +1,7 @@
 {
-    "name": "Levantamento de Estoque",
-    "short_name": "Levantamento Estoque","start_url": "https://andrefguirro.github.io/Levantamento_Estoque_Vendedores/index.html",
+  "name": "Levantamento de Estoque",
+  "short_name": "Levantamento Estoque",
+  "start_url": "https://andrefguirro.github.io/Levantamento_Estoque_Vendedores/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -11,15 +12,14 @@
       "type": "image/png"
     },
     {
-      "src": "Imagens/logoMarcas512x512.pngv=2",
+      "src": "Imagens/logoMarcas512x512.png?v=2",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "Imagens/logoMarcas144x144.pngv=2",
+      "src": "Imagens/logoMarcas144x144.png?v=2",
       "sizes": "144x144",
       "type": "image/png"
     }
   ]
 }
-  
