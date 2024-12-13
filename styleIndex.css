@@ -4,6 +4,8 @@
     top: 0;
     z-index: 1030;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-nav .nav-link {
@@ -11,11 +13,9 @@
     font-weight: bold; /* Deixa a letra mais grossa */
     color: #ffffff; /* Deixa o texto branco para contraste */
     text-transform: uppercase; /* Deixa as letras todas maiúsculas (opcional) */
+    color: #ffffff !important;
   }
 
-  .navbar-nav .nav-link:hover {
-    color: #ffcc00; /* Altera a cor ao passar o mouse (opcional) */
-  }
 
 /* Fixando o cabeçalho "Levantamento de Estoque" e botões */
 .sticky-header {
@@ -88,6 +88,12 @@
         width: 50px;  /* Dimensões menores para celular */
         height: 40px;
     }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
