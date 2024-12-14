@@ -40,29 +40,32 @@
   
   </head>
   <body>
-    <h2>Calculadora de Mix Médio</h2>
-    <table>
-      <tr>
-        <td>Dias Úteis:</td>
-        <td><input type="number" id="diasUteis" readonly></td>
-      </tr>
-      <tr>
-        <td>Dias Trabalhados:</td>
-        <td><input type="number" id="diasTrabalhados" readonly></td>
-      </tr>
-      <tr>
-        <td>Dias Faltantes:</td>
-        <td><input type="number" id="diasFaltantes" readonly></td>
-      </tr>
-      <tr>
-        <td>Mix Médio Atual:</td>
-        <td><input type="number" id="mixMedio" step="0.01"></td>
-      </tr>
-      <tr>
-        <td>Mix Faltante:</td>
-        <td><input type="number" id="mixFaltante" readonly></td>
-      </tr>
-    </table>
+    <div class="mix-medio-container">
+      <h2 class="title">Calculadora de Mix Médio</h2>
+      <form class="form-mix-medio">
+          <div class="form-group">
+              <label for="diasUteis">Dias Úteis:</label>
+              <input type="number" id="diasUteis" class="form-control" readonly>
+          </div>
+          <div class="form-group">
+              <label for="diasTrabalhados">Dias Trabalhados:</label>
+              <input type="number" id="diasTrabalhados" class="form-control" readonly>
+          </div>
+          <div class="form-group">
+              <label for="diasFaltantes">Dias Faltantes:</label>
+              <input type="number" id="diasFaltantes" class="form-control" readonly>
+          </div>
+          <div class="form-group">
+              <label for="mixMedio">Mix Médio Atual:</label>
+              <input type="number" id="mixMedio" class="form-control" step="0.01">
+          </div>
+          <div class="form-group">
+              <label for="mixFaltante">Mix Faltante:</label>
+              <input type="number" id="mixFaltante" class="form-control" readonly>
+          </div>
+      </form>
+  </div>
+  
   
 
     <div class="container mt-5">

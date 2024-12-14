@@ -91,6 +91,54 @@
     }
 }
 
+/* Container geral */
+.mix-medio-container {
+    max-width: 600px;
+    margin: 20px auto; /* Centraliza o formulário */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.mix-medio-container .title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilo dos rótulos e campos */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para campos em foco */
+.form-control:focus {
+    border-color: #156FF5;
+    box-shadow: 0 0 5px rgba(21, 111, 245, 0.4);
+    outline: none;
+}
 
 
 
