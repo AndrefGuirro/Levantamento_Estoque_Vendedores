@@ -17,13 +17,14 @@
   }
 
 
+
 /* Fixando o cabeçalho "Levantamento de Estoque" e botões */
 .sticky-header {
     position: sticky;
-    top: 70px; /* Altura da navbar */
+    top: 50px; /* Altura da navbar */
     z-index: 1020;
     background-color: white;
-    padding: 10px 0;
+    padding: 10px ;
 }
 
 .sharebButton {
@@ -90,10 +91,6 @@
     }
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 
