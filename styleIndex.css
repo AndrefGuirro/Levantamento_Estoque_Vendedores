@@ -129,7 +129,7 @@
 
 .form-group label {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     color: #555;
     margin-bottom: 5px;
 }
@@ -137,7 +137,7 @@
 .form-control {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
@@ -170,6 +170,31 @@
     border-color: #156FF5;
     box-shadow: 0 0 5px rgba(21, 111, 245, 0.4);
     outline: none;
+}
+
+/* Ajustes para telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* As colunas se alinham verticalmente */
+    }
+
+    .column {
+        flex: none; /* Permite que as colunas ocupem a largura total */
+        width: 100%; /* Cada coluna ocupa 100% da tela */
+        margin-bottom: 20px; /* Espaço entre as colunas */
+    }
+
+    /* Ajustes nos botões de rádio */
+    .radio-buttons {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os botões se ajustem em várias linhas */
+        justify-content: space-between;
+    }
+
+    .radio-buttons div {
+        width: 48%; /* Cada botão ocupa metade da largura */
+        margin-bottom: 10px;
+    }
 }
 
 
