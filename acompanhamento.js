@@ -14,7 +14,6 @@ const feriados = [
   "2025-11-20", // Consciência Negra 2025
 ];
 
-
 // Função para calcular se uma data é feriado
 function ehFeriado(data) {
   const dataFormatada = data.toISOString().split("T")[0];
@@ -45,21 +44,31 @@ function calcularDiasUteis() {
   const diasFaltantes = diasUteis - diasTrabalhados;
 
   // Preencher os campos no formulário
-  document.getElementById('diasUteis').value = diasUteis;
-  document.getElementById('diasTrabalhados').value = diasTrabalhados;
-  document.getElementById('diasFaltantes').value = diasFaltantes;
+  document.getElementById("diasUteis").value = diasUteis;
+  document.getElementById("diasTrabalhados").value = diasTrabalhados;
+  document.getElementById("diasFaltantes").value = diasFaltantes;
 }
 
 // Função para calcular Mix Faltante
 function calcularMixFaltante() {
-  const diasUteis = parseFloat(document.getElementById('diasUteis').value);
-  const diasTrabalhados = parseFloat(document.getElementById('diasTrabalhados').value);
-  const diasFaltantes = parseFloat(document.getElementById('diasFaltantes').value);
-  const mixMedio = parseFloat(document.getElementById('mixMedio').value);
+  const diasUteis = parseFloat(document.getElementById("diasUteis").value);
+  const diasTrabalhados = parseFloat(document.getElementById("diasTrabalhados").value);
+  const diasFaltantes = parseFloat(document.getElementById("diasFaltantes").value);
+  const mixMedio = parseFloat(document.getElementById("mixMedio").value);
+
+  // Verificar qual botão radio está selecionado
+  const mix25Selecionado = document.getElementById("mix25").checked;
+  const mix30Selecionado = document.getElementById("mix30").checked;
+
+  let mixReferencia = 30; // Padrão
+
+  if (mix25Selecionado) {
+    mixReferencia = 25;
+  }
 
   if (!isNaN(mixMedio)) {
-    const mixFaltante = ((diasUteis * 30) - (diasTrabalhados * mixMedio)) / diasFaltantes;
-    document.getElementById('mixFaltante').value = mixFaltante.toFixed(2);
+    const mixFaltante = ((diasUteis * mixReferencia) - (diasTrabalhados * mixMedio)) / diasFaltantes;
+    document.getElementById("mixFaltante").value = mixFaltante.toFixed(2);
   }
 }
 
@@ -68,5 +77,9 @@ window.onload = function () {
   calcularDiasUteis();
 
   // Adicionar evento para recalcular Mix Faltante
-  document.getElementById('mixMedio').addEventListener('input', calcularMixFaltante);
+  document.getElementById("mixMedio").addEventListener("input", calcularMixFaltante);
+
+  // Adicionar eventos nos botões radio
+  document.getElementById("mix25").addEventListener("change", calcularMixFaltante);
+  document.getElementById("mix30").addEventListener("change", calcularMixFaltante);
 };
