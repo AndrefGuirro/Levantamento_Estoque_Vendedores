@@ -21,7 +21,7 @@
 /* Fixando o cabeçalho "Levantamento de Estoque" e botões */
 .sticky-header {
     position: sticky;
-    top: 50px; /* Altura da navbar */
+    top: 10px; /* Altura da navbar */
     z-index: 1020;
     background-color: white;
     padding: 10px ;
