@@ -39,32 +39,52 @@
     <script src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/dist/date-fns.min.js"></script>
   
   </head>
-  <body>
-    <div class="mix-medio-container">
-      <h2 class="title">Calculadora de Mix Médio</h2>
-      <form class="form-mix-medio">
-          <div class="form-group">
-              <label for="diasUteis">Dias Úteis:</label>
-              <input type="number" id="diasUteis" class="form-control" readonly>
-          </div>
-          <div class="form-group">
-              <label for="diasTrabalhados">Dias Trabalhados:</label>
-              <input type="number" id="diasTrabalhados" class="form-control" readonly>
-          </div>
-          <div class="form-group">
-              <label for="diasFaltantes">Dias Faltantes:</label>
-              <input type="number" id="diasFaltantes" class="form-control" readonly>
-          </div>
-          <div class="form-group">
-              <label for="mixMedio">Mix Médio Atual:</label>
-              <input type="number" id="mixMedio" class="form-control" step="0.01">
-          </div>
-          <div class="form-group">
-              <label for="mixFaltante">Mix Faltante:</label>
-              <input type="number" id="mixFaltante" class="form-control" readonly>
-          </div>
-      </form>
-  </div>
+  <div class="mix-medio-container">
+    <h2 class="title">Calculadora de Mix Médio</h2>
+    <form class="form-mix-medio">
+        <div class="row">
+            <!-- Primeira Coluna -->
+            <div class="column">
+                <div class="form-group">
+                    <label for="diasUteis">Dias Úteis:</label>
+                    <input type="number" id="diasUteis" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="diasTrabalhados">Dias Trabalhados:</label>
+                    <input type="number" id="diasTrabalhados" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="diasFaltantes">Dias Faltantes:</label>
+                    <input type="number" id="diasFaltantes" class="form-control" readonly>
+                </div>
+            </div>
+
+            <!-- Segunda Coluna -->
+            <div class="column">
+                <div class="form-group radio-buttons">
+                    
+                    <div>
+                        <input type="radio" id="mix25" name="mixOption" value="25">
+                        <label for="mix25">Calcular Mix para 25</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mix30" name="mixOption" value="30">
+                        <label for="mix30">Calcular Mix para 30</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mixMedio">Mix Médio Atual:</label>
+                    <input type="number" id="mixMedio" class="form-control" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="mixFaltante">Mix Faltante:</label>
+                    <input type="number" id="mixFaltante" class="form-control" readonly>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
   
   
 

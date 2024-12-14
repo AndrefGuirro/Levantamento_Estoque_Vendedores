@@ -93,7 +93,7 @@
 
 /* Container geral */
 .mix-medio-container {
-    max-width: 600px;
+    max-width: 800px; /* Maior largura para acomodar duas colunas */
     margin: 20px auto; /* Centraliza o formulário */
     padding: 20px;
     border: 1px solid #ddd;
@@ -109,6 +109,17 @@
     color: #333;
     margin-bottom: 20px;
     font-weight: bold;
+}
+
+/* Layout de duas colunas */
+.row {
+    display: flex;
+    justify-content: space-between; /* Espaçamento automático entre colunas */
+    gap: 20px; /* Espaço entre colunas */
+}
+
+.column {
+    flex: 1; /* Cada coluna ocupa o mesmo espaço */
 }
 
 /* Estilo dos rótulos e campos */
@@ -131,6 +142,27 @@
     border-radius: 5px;
     background-color: #fff;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões de opção */
+.radio-buttons {
+    margin-top: 10px;
+}
+
+.radio-buttons div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-buttons input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Deixa os botões maiores para visualização */
+}
+
+.radio-buttons label {
+    font-size: 16px;
+    color: #333;
 }
 
 /* Estilo para campos em foco */
