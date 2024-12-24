@@ -1,5 +1,3 @@
-//CALCULADORA DE MIX MEDIO
-
 // Lista de feriados no formato AAAA-MM-DD
 const feriados = [
   "2024-12-25", // Natal de 2024
@@ -30,21 +28,18 @@ function calcularDiasUteis() {
   let diasUteis = 0;
   let diasTrabalhados = 0;
 
-  // Loop por todos os dias do mês
   for (let dia = new Date(inicioMes); dia <= fimMes; dia.setDate(dia.getDate() + 1)) {
     const diaSemana = dia.getDay();
     if (diaSemana !== 0 && diaSemana !== 6 && !ehFeriado(dia)) {
-      // Exclui sábados, domingos e feriados
       diasUteis++;
       if (dia < hoje.setHours(0, 0, 0, 0)) {
-        diasTrabalhados++; // Considere apenas os dias úteis passados
+        diasTrabalhados++;
       }
     }
   }
 
   const diasFaltantes = diasUteis - diasTrabalhados;
 
-  // Preencher os campos no formulário
   document.getElementById("diasUteis").value = diasUteis;
   document.getElementById("diasTrabalhados").value = diasTrabalhados;
   document.getElementById("diasFaltantes").value = diasFaltantes;
@@ -52,37 +47,43 @@ function calcularDiasUteis() {
 
 // Função para atualizar os campos dinamicamente
 function atualizarCamposDias() {
-  const diasUteis = parseFloat(document.getElementById("diasUteis").value);
-  const diasTrabalhados = parseFloat(document.getElementById("diasTrabalhados").value);
-  const diasFaltantes = parseFloat(document.getElementById("diasFaltantes").value);
+  const diasUteisInput = document.getElementById("diasUteis");
+  const diasTrabalhadosInput = document.getElementById("diasTrabalhados");
+  const diasFaltantesInput = document.getElementById("diasFaltantes");
+
+  const diasUteis = parseFloat(diasUteisInput.value);
+  const diasTrabalhados = parseFloat(diasTrabalhadosInput.value);
+  const diasFaltantes = parseFloat(diasFaltantesInput.value);
+
+  if (diasUteisInput.value === "" || diasTrabalhadosInput.value === "" || diasFaltantesInput.value === "") {
+    return;
+  }
 
   if (!isNaN(diasUteis) && !isNaN(diasTrabalhados)) {
-    // Recalcula Dias Faltantes
-    document.getElementById("diasFaltantes").value = diasUteis - diasTrabalhados;
+    diasFaltantesInput.value = diasUteis - diasTrabalhados;
   } else if (!isNaN(diasUteis) && !isNaN(diasFaltantes)) {
-    // Recalcula Dias Trabalhados
-    document.getElementById("diasTrabalhados").value = diasUteis - diasFaltantes;
+    diasTrabalhadosInput.value = diasUteis - diasFaltantes;
   } else if (!isNaN(diasTrabalhados) && !isNaN(diasFaltantes)) {
-    // Recalcula Dias Úteis
-    document.getElementById("diasUteis").value = diasTrabalhados + diasFaltantes;
+    diasUteisInput.value = diasTrabalhados + diasFaltantes;
   }
 }
 
 // Função para calcular Mix Faltante
 function calcularMixFaltante() {
-  const diasUteis = parseFloat(document.getElementById("diasUteis").value);
-  const diasTrabalhados = parseFloat(document.getElementById("diasTrabalhados").value);
-  const diasFaltantes = parseFloat(document.getElementById("diasFaltantes").value);
+  const diasUteis = parseFloat(document.getElementById("diasUteis").value) || 0;
+  const diasTrabalhados = parseFloat(document.getElementById("diasTrabalhados").value) || 0;
+  const diasFaltantes = parseFloat(document.getElementById("diasFaltantes").value) || 0;
   const mixMedio = parseFloat(document.getElementById("mixMedio").value);
 
-  // Verifica qual botão de mix está selecionado
   const mix25Selecionado = document.getElementById("mix25").checked;
   const mix30Selecionado = document.getElementById("mix30").checked;
   const mixBase = mix25Selecionado ? 25 : 30;
 
-  if (!isNaN(mixMedio)) {
+  if (!isNaN(mixMedio) && diasFaltantes > 0) {
     const mixFaltante = ((diasUteis * mixBase) - (diasTrabalhados * mixMedio)) / diasFaltantes;
     document.getElementById("mixFaltante").value = mixFaltante.toFixed(2);
+  } else {
+    document.getElementById("mixFaltante").value = "";
   }
 }
 
@@ -90,12 +91,21 @@ function calcularMixFaltante() {
 window.onload = function () {
   calcularDiasUteis();
 
-  // Adicionar eventos para recalcular ao editar os campos
-  document.getElementById("diasUteis").addEventListener("input", atualizarCamposDias);
-  document.getElementById("diasTrabalhados").addEventListener("input", atualizarCamposDias);
-  document.getElementById("diasFaltantes").addEventListener("input", atualizarCamposDias);
+  document.getElementById("diasUteis").addEventListener("input", () => {
+    atualizarCamposDias();
+    calcularMixFaltante();
+  });
 
-  // Adicionar evento para recalcular Mix Faltante
+  document.getElementById("diasTrabalhados").addEventListener("input", () => {
+    atualizarCamposDias();
+    calcularMixFaltante();
+  });
+
+  document.getElementById("diasFaltantes").addEventListener("input", () => {
+    atualizarCamposDias();
+    calcularMixFaltante();
+  });
+
   document.getElementById("mixMedio").addEventListener("input", calcularMixFaltante);
   document.getElementById("mix25").addEventListener("change", calcularMixFaltante);
   document.getElementById("mix30").addEventListener("change", calcularMixFaltante);
