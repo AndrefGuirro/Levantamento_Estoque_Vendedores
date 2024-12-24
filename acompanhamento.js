@@ -1,6 +1,7 @@
 // Lista de feriados no formato AAAA-MM-DD
 const feriados = [
   "2024-12-25", // Natal de 2024
+  "2024-12-31", // Folga
   "2025-01-01", // Ano Novo 2025
   "2025-04-21", // Tiradentes 2025
   "2025-05-01", // Dia do Trabalhador 2025
