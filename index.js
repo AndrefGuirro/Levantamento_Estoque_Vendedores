@@ -109,3 +109,65 @@ document.getElementById('shareButton').addEventListener('click', function() {
     // Abre a URL do WhatsApp
     window.open(whatsappUrl, '_blank');
 });
+
+
+//Salvar dados preenchidos localmente
+function salvarDadosTabela() {
+    const rows = document.querySelectorAll('table tbody tr');
+    const data = [];
+
+    rows.forEach(row => {
+        const columns = row.querySelectorAll('td');
+        const produto = columns[0].innerText;
+        const estoque = columns[1].innerText;
+        const sugestao = columns[2].innerText;
+
+        data.push({ produto, estoque, sugestao });
+    });
+
+    localStorage.setItem('dadosTabela', JSON.stringify(data)); // Salva os dados como string no localStorage
+}
+
+document.querySelectorAll('td[contenteditable="true"]').forEach(cell => {
+    cell.addEventListener('input', salvarDadosTabela);
+});
+
+//Recupera os dados salvo
+function carregarDadosTabela() {
+    const savedData = localStorage.getItem('dadosTabela'); // Obtém os dados salvos
+
+    if (savedData) {
+        const rows = JSON.parse(savedData);
+
+        const tbody = document.querySelector('table tbody');
+        tbody.innerHTML = ''; // Limpa a tabela atual
+
+        rows.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${row.produto}</td>
+                <td contenteditable="true">${row.estoque}</td>
+                <td contenteditable="true">${row.sugestao}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // Reatribui o eventListener após recriar a tabela
+        document.querySelectorAll('td[contenteditable="true"]').forEach(cell => {
+            cell.addEventListener('input', salvarDadosTabela);
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', carregarDadosTabela);
+
+//Botão LIMPAR DADOS para excluir os dados digitados da memória 
+document.getElementById('limparDados').addEventListener('click', function() {
+    localStorage.removeItem('dadosTabela'); // Remove os dados do localStorage
+    carregarDadosTabela(); // Recarrega a tabela vazia
+    alert('Dados apagados com sucesso!');
+});
+
+
+
+
