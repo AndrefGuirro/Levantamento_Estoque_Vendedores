@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', carregarDadosTabela);
 document.getElementById('limparDados').addEventListener('click', function() {
     localStorage.removeItem('dadosTabela'); // Remove os dados do localStorage
     carregarDadosTabela(); // Recarrega a tabela vazia
-    alert('Dados apagados com sucesso!');
+    alert('Dados apagados!  ATUALIZE A PÁGINA');
 });
 
 
