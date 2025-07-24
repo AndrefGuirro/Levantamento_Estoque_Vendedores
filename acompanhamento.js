@@ -2,16 +2,7 @@
 const feriados = [
   "2024-12-25", // Natal de 2024
   "2024-12-31", // Folga
-  "2025-01-01", // Ano Novo 2025
-  "2025-04-21", // Tiradentes 2025
-  "2025-05-01", // Dia do Trabalhador 2025
-  "2025-09-07", // Independência do Brasil 2025
-  "2025-10-12", // Nossa Senhora Aparecida 2025
-  "2025-11-02", // Finados 2025
-  "2025-11-15", // Proclamação da República 2025
-  "2025-12-25", // Natal de 2025
-  "2025-07-09", // Revolução Constitucionalista 2025
-  "2025-11-20", // Consciência Negra 2025
+  "2026-01-01", // Ano Novo 2026
 ];
 
 // Função para calcular se uma data é feriado
