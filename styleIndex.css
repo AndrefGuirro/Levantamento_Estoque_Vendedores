@@ -1,3 +1,14 @@
+/* Layout geral da página */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
 /* Fixando a navbar */
 .navbar {
     position: sticky;
@@ -93,6 +104,7 @@
 
 /* Container geral */
 .mix-medio-container {
+    flex-grow: 1;
     max-width: 800px; /* Maior largura para acomodar duas colunas */
    padding: 20px;
     border: 1px solid #ddd;
