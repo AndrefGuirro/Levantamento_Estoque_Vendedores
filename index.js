@@ -76,37 +76,40 @@ document.getElementById('searchInput').addEventListener('input', function() {
     });
 });
 
-//Função compartilhar WhatsApp
+// Função compartilhar WhatsApp
 document.getElementById('shareButton').addEventListener('click', function() {
     const rows = document.querySelectorAll('table tbody tr');
-    let message = 'Segue Levantamento de Estoque e Sugestão de pedido:\n------------------------\n\n'; // Título com linha pontilhada
+    let message = 'Segue Levantamento de Estoque e Sugestão de pedido:\n------------------------\n\n';
+    let itensIncluidos = 0;
     
     rows.forEach(row => {
         const columns = row.querySelectorAll('td');
-        const nomeProduto = columns[0].innerText;
+        if (columns.length < 3) return;
+
+        const nomeProduto = columns[0].innerText.trim();
         const estoque = columns[1].innerText.trim();
         const sugestao = columns[2].innerText.trim();
         
-        // Verifica se as colunas "ESTOQUE" e "SUGESTÃO" estão preenchidas
-        if (estoque !== '' & sugestao !== '') {
-            // Formata a mensagem sem símbolos de formatação
-            message += `Produto: ${nomeProduto}\nEstoque: ${estoque}\nSugestão: ${sugestao}\n\n------------------------\n`;
+        // Entra se ao menos um dos campos estiver preenchido
+        if (estoque !== '' || sugestao !== '') {
+            const estoqueExibicao = estoque !== '' ? estoque : '-';
+            const sugestaoExibicao = sugestao !== '' ? sugestao : '-';
+
+            message += `Produto: ${nomeProduto}\nEstoque: ${estoqueExibicao}\nSugestão: ${sugestaoExibicao}\n\n------------------------\n`;
+            itensIncluidos++;
         }
     });
 
-    // Verifica se há produtos preenchidos
-    if (message === 'Segue Levantamento de Estoque e Sugestão de pedido:\n------------------------\n\n') {
-        alert('Falta produto preenchido para compartilhar. Preencha as 2 colunas, Estoque e sugestão, mesmo que seja 0');
+    // Se nenhum item foi incluído
+    if (itensIncluidos === 0) {
+        alert('Nenhum item preenchido para compartilhar. Preencha ao menos uma das colunas (Estoque ou Sugestão).');
         return;
     }
 
     // Codifica a mensagem para a URL
     const encodedMessage = encodeURIComponent(message);
-    
-    // URL do WhatsApp
     const whatsappUrl = `https://wa.me/?text=${encodedMessage}`;
     
-    // Abre a URL do WhatsApp
     window.open(whatsappUrl, '_blank');
 });
 
